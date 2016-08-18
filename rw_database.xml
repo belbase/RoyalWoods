@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.5.4.1
+- https://www.phpmyadmin.net
+-
+- Host: localhost
+- Generation Time: Mar 27, 2016 at 11:57 PM
+- Server version: 5.5.45
+- PHP Version: 7.0.4RC1
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="rw_database" collation="utf8_general_ci" charset="utf8">
+            <pma:table name="ajax_example">
+                CREATE TABLE `ajax_example` (
+                  `name` varchar(50) NOT NULL,
+                  `age` int(11) NOT NULL,
+                  `sex` varchar(1) NOT NULL,
+                  `wpm` int(11) NOT NULL,
+                  PRIMARY KEY (`name`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="rw_admin">
+                CREATE TABLE `rw_admin` (
+                  `username` varchar(20) NOT NULL,
+                  `password` varchar(16) NOT NULL,
+                  `pin` varchar(10) NOT NULL,
+                  `ref` varchar(15) NOT NULL,
+                  PRIMARY KEY (`username`(10)) USING BTREE,
+                  UNIQUE KEY `FORIGN` (`pin`,`ref`(5)) USING BTREE
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="rw_order">
+                CREATE TABLE `rw_order` (
+                  `oid` varchar(14) NOT NULL,
+                  `dop` datetime NOT NULL,
+                  `title` varchar(30) NOT NULL,
+                  `price` varchar(6) NOT NULL,
+                  `stat` varchar(2) NOT NULL,
+                  `prid` varchar(12) NOT NULL,
+                  `pin` varchar(10) NOT NULL,
+                  PRIMARY KEY (`oid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="rw_product">
+                CREATE TABLE `rw_product` (
+                  `prid` varchar(12) NOT NULL,
+                  `cat` varchar(10) NOT NULL,
+                  `title` varchar(50) NOT NULL,
+                  `disc` varchar(2000) NOT NULL,
+                  `price` varchar(5) NOT NULL,
+                  `img` varchar(19) DEFAULT NULL,
+                  `stat` varchar(2) NOT NULL,
+                  PRIMARY KEY (`prid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="rw_users">
+                CREATE TABLE `rw_users` (
+                  `username` varchar(20) NOT NULL,
+                  `password` varchar(16) NOT NULL,
+                  `pin` varchar(10) NOT NULL,
+                  `ref` varchar(15) NOT NULL,
+                  PRIMARY KEY (`pin`),
+                  UNIQUE KEY `username` (`username`),
+                  UNIQUE KEY `REF` (`ref`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="rw_users_info">
+                CREATE TABLE `rw_users_info` (
+                  `pin` varchar(10) NOT NULL,
+                  `fname` varchar(15) NOT NULL,
+                  `lname` varchar(15) NOT NULL,
+                  `dob` date NOT NULL,
+                  `sex` varchar(1) NOT NULL,
+                  `email` varchar(30) NOT NULL,
+                  `phone` varchar(10) NOT NULL,
+                  PRIMARY KEY (`pin`),
+                  UNIQUE KEY `EMAIL` (`email`),
+                  UNIQUE KEY `PHONE` (`phone`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="rw_users_meta">
+                CREATE TABLE `rw_users_meta` (
+                  `pin` varchar(10) NOT NULL,
+                  `datetime` datetime NOT NULL,
+                  `acctype` varchar(1) NOT NULL,
+                  PRIMARY KEY (`pin`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'rw_database'
+    -->
+    <database name="rw_database">
+        <!-- Table ajax_example -->
+        <table name="ajax_example">
+            <column name="name">Frank</column>
+            <column name="age">45</column>
+            <column name="sex">m</column>
+            <column name="wpm">87</column>
+        </table>
+        <table name="ajax_example">
+            <column name="name">Jerry</column>
+            <column name="age">120</column>
+            <column name="sex">m</column>
+            <column name="wpm">120</column>
+        </table>
+        <table name="ajax_example">
+            <column name="name">Jill</column>
+            <column name="age">22</column>
+            <column name="sex">f</column>
+            <column name="wpm">72</column>
+        </table>
+        <table name="ajax_example">
+            <column name="name">Julie</column>
+            <column name="age">35</column>
+            <column name="sex">f</column>
+            <column name="wpm">90</column>
+        </table>
+        <table name="ajax_example">
+            <column name="name">Regis</column>
+            <column name="age">75</column>
+            <column name="sex">m</column>
+            <column name="wpm">44</column>
+        </table>
+        <table name="ajax_example">
+            <column name="name">Tracy</column>
+            <column name="age">27</column>
+            <column name="sex">f</column>
+            <column name="wpm">0</column>
+        </table>
+        <!-- Table rw_admin -->
+        <table name="rw_admin">
+            <column name="username">belbase</column>
+            <column name="password">13urmila</column>
+            <column name="pin">8437389009</column>
+            <column name="ref">843738900912345</column>
+        </table>
+        <!-- Table rw_order -->
+        <table name="rw_order">
+            <column name="oid">OD0433129785IN</column>
+            <column name="dop">2016-03-25 23:43:02</column>
+            <column name="title">RoyalWoods Single Regular Bed</column>
+            <column name="price">45000</column>
+            <column name="stat">C</column>
+            <column name="prid">391232581215</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD1280228187IN</column>
+            <column name="dop">2016-03-27 16:40:07</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD1653867469IN</column>
+            <column name="dop">2016-03-27 16:41:30</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD1945991103IN</column>
+            <column name="dop">2016-03-25 19:37:30</column>
+            <column name="title">Modern Bed     </column>
+            <column name="price">7000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD3135578842IN</column>
+            <column name="dop">2016-03-27 18:23:31</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD3818994965IN</column>
+            <column name="dop">2016-03-27 16:54:30</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD3940155141IN</column>
+            <column name="dop">2016-03-27 17:18:54</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD4231617828IN</column>
+            <column name="dop">2016-03-27 12:25:52</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD4964431723IN</column>
+            <column name="dop">2016-03-27 17:09:28</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD7615448326IN</column>
+            <column name="dop">2016-03-27 17:38:44</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD7617796455IN</column>
+            <column name="dop">2016-03-27 16:43:02</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD7812222188IN</column>
+            <column name="dop">2016-03-27 16:40:54</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD8546471625IN</column>
+            <column name="dop">2016-03-27 17:07:00</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="price">12000</column>
+            <column name="stat">C</column>
+            <column name="prid">123456789012</column>
+            <column name="pin">9575235312</column>
+        </table>
+        <table name="rw_order">
+            <column name="oid">OD9340243156IN</column>
+            <column name="dop">2016-03-25 19:26:35</column>
+            <column name="title">Modern Bed     </column>
+            <column name="price"></column>
+            <column name="stat">C</column>
+            <column name="prid"></column>
+            <column name="pin"></column>
+        </table>
+        <!-- Table rw_product -->
+        <table name="rw_product">
+            <column name="prid">123456789012</column>
+            <column name="cat">LivingRoom</column>
+            <column name="title">RoyalWoods Feather Sofa</column>
+            <column name="disc">The Best in it's category, This sofa is the best that you can get in this range. Made of imported Fine laminate and Ply. Give you a very comfortable sitting and a Traditional Look For Your Living Room. </column>
+            <column name="price">12000</column>
+            <column name="img">26097534.118_n.jpeg</column>
+            <column name="stat">P</column>
+        </table>
+        <table name="rw_product">
+            <column name="prid">391232581215</column>
+            <column name="cat">BedRoom</column>
+            <column name="title">RoyalWoods Single Regular Bed</column>
+            <column name="disc">For an individual and Two people. This is single size King Bed with extra space. You can feel the luxury and Comfort at the ease of Affordable Price. Specially made of Imported fine Pine. Available in Limited Quantity. So, hurry and grab the opportunity of feeling the real comfort of Sleeping</column>
+            <column name="price">45000</column>
+            <column name="img">85132091.647_n.jpg</column>
+            <column name="stat">P</column>
+        </table>
+        <table name="rw_product">
+            <column name="prid">493734864262</column>
+            <column name="cat">BedRoom</column>
+            <column name="title">RoyalWoods King Single Bed </column>
+            <column name="disc">For an individual and Two people. This is single size King Bed with extra space. You can feel the luxury and Comfort at the ease of Affordable Price. Specially made of Imported fine Pine and Prime Wood Laminate. Available in Limited Quantity. So, hurry and grab the opportunity of feeling the real comfort of Sleeping</column>
+            <column name="price">5000</column>
+            <column name="img">6412.8913705_n.jpg</column>
+            <column name="stat">P</column>
+        </table>
+        <table name="rw_product">
+            <column name="prid">601386323442</column>
+            <column name="cat">BedRoom</column>
+            <column name="title">Royalwoods Modern Compact King Bed</column>
+            <column name="disc">Royalwoods Modern Compact King Bed</column>
+            <column name="price">5000</column>
+            <column name="img">116472.59038_n.jpg</column>
+            <column name="stat">P</column>
+        </table>
+        <!-- Table rw_users -->
+        <table name="rw_users">
+            <column name="username">deepak_b</column>
+            <column name="password">13urmila</column>
+            <column name="pin">1870847334</column>
+            <column name="ref">187084733412345</column>
+        </table>
+        <table name="rw_users">
+            <column name="username">deepak</column>
+            <column name="password">13urmila</column>
+            <column name="pin">9575235312</column>
+            <column name="ref">957523531212345</column>
+        </table>
+        <!-- Table rw_users_info -->
+        <table name="rw_users_info">
+            <column name="pin">1870847334</column>
+            <column name="fname">Deepak</column>
+            <column name="lname">Belbase</column>
+            <column name="dob">1998-05-03</column>
+            <column name="sex">M</column>
+            <column name="email">deepak67@ymail.com</column>
+            <column name="phone">9888492983</column>
+        </table>
+        <table name="rw_users_info">
+            <column name="pin">9575235312</column>
+            <column name="fname">Deepak</column>
+            <column name="lname">Belbase</column>
+            <column name="dob">1995-04-26</column>
+            <column name="sex">M</column>
+            <column name="email">edeepakbelbase@gmail.com</column>
+            <column name="phone">8437389009</column>
+        </table>
+        <!-- Table rw_users_meta -->
+        <table name="rw_users_meta">
+            <column name="pin">1870847334</column>
+            <column name="datetime">2016-03-16 20:24:27</column>
+            <column name="acctype">H</column>
+        </table>
+        <table name="rw_users_meta">
+            <column name="pin">9575235312</column>
+            <column name="datetime">2016-02-25 05:18:04</column>
+            <column name="acctype">S</column>
+        </table>
+    </database>
+</pma_xml_export>
