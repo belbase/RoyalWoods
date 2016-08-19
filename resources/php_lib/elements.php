@@ -115,7 +115,7 @@
                         </ul>
                         <div id='rw_lower_footer' style='position:relative; height: 20%; width:100%;border-top:1px solid #000000;float: left;'>
        
-                        <p>&copy; 2016 MADS Inc. <a href='#' style='float: right;'>By Make A Different Style</a></p>
+                        <p>&copy; 2016 MADS Inc. <a href='#' style='float: right;'>By Makes A Different Style</a></p>
                             </div>
                             </div>
                             </div>
